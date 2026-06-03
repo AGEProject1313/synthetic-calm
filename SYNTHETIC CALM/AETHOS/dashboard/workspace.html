@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>AETHOS A.M.I.</title>
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="workspace.css">
+
+</head>
+
+<body>
+
+    <div class="background-grid"></div>
+
+    <div class="background-glow glow-1"></div>
+    <div class="background-glow glow-2"></div>
+
+    <main class="app">
+
+        <!-- HEADER -->
+
+        <header class="header">
+
+            <div class="header-left">
+
+                <div class="system-name">
+                    AETHOS
+                </div>
+
+                <div class="system-subtitle">
+                    AETHOS INTEGRITY MONITORING
+                </div>
+
+            </div>
+
+            <div class="header-right">
+
+                <div class="badge">
+                    A.M.I.
+                </div>
+
+                <div class="badge online">
+                    ONLINE
+                </div>
+
+            </div>
+
+        </header>
+
+        <!-- DISTRICT STATUS -->
+
+        <section class="climate-panel">
+
+            <div class="climate-main">
+
+                <div class="climate-title">
+                    VEYRA DISTRICT
+                </div>
+
+                <div class="climate-temp"
+                     id="temperature">
+                    ACTIVE
+                </div>
+
+                <div class="climate-status">
+                    CITY STATUS OVERVIEW
+                </div>
+
+            </div>
+
+            <div class="climate-stats">
+
+                <div class="stat-box">
+
+                    <div class="stat-label">
+                        ACCESS EVENTS
+                    </div>
+
+                    <div class="stat-value"
+                         id="wind">
+                        1,842
+                    </div>
+
+                </div>
+
+                <div class="stat-box">
+
+                    <div class="stat-label">
+                        RESIDENTS
+                    </div>
+
+                    <div class="stat-value"
+                         id="humidity">
+                        4,216
+                    </div>
+
+                </div>
+
+                <div class="stat-box">
+
+                    <div class="stat-label">
+                        ALERTS
+                    </div>
+
+                    <div class="stat-value"
+                         id="syncTime">
+                        0
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- SUBJECT -->
+
+        <section class="subject-panel">
+
+            <div class="subject-top">
+
+                <div class="subject-label">
+                    PERSON OF INTEREST
+                </div>
+
+                <h2 id="subjectName">
+                    Nathan Verra
+                </h2>
+
+            </div>
+
+            <div class="subject-buttons">
+
+                <button class="subject-btn active"
+                        data-resident="nathan">
+                    Nathan Verra
+                </button>
+
+                <button class="subject-btn"
+                        data-resident="elias">
+                    Elias Rowe
+                </button>
+
+                <button class="subject-btn"
+                        data-resident="ava">
+                    Ava Mercer
+                </button>
+
+                <button class="subject-btn"
+                        data-resident="daniel">
+                    Daniel Kessler
+                </button>
+
+            </div>
+
+        </section>
+
+        <!-- CONTENT -->
+
+        <section class="content-grid">
+
+            <div class="left-column">
+
+                <div class="panel">
+
+                    <div class="panel-title">
+                        RESIDENT PROFILE
+                    </div>
+
+                    <div id="lifecareData"></div>
+
+                </div>
+
+                <div class="panel">
+
+                    <div class="panel-title">
+                        ACCESS CONTROL
+                    </div>
+
+                    <div id="accessData"></div>
+
+                </div>
+
+                <div class="panel">
+
+                    <div class="panel-title">
+                        LOCATION CROSS-CHECK
+                    </div>
+
+                    <div class="cross-check-list">
+
+                        <label class="cross-check-item">
+                            <input type="checkbox"
+                                   class="cross-check-person"
+                                   value="nathan">
+                            Nathan Verra
+                        </label>
+
+                        <label class="cross-check-item">
+                            <input type="checkbox"
+                                   class="cross-check-person"
+                                   value="ava">
+                            Ava Mercer
+                        </label>
+
+                        <label class="cross-check-item">
+                            <input type="checkbox"
+                                   class="cross-check-person"
+                                   value="daniel">
+                            Daniel Kessler
+                        </label>
+
+                        <label class="cross-check-item">
+                            <input type="checkbox"
+                                   class="cross-check-person"
+                                   value="elias">
+                            Elias Rowe
+                        </label>
+
+                    </div>
+
+                    <button id="crossCheckButton"
+                            class="cross-check-button">
+                        RUN CROSS-CHECK
+                    </button>
+
+                    <div id="crossCheckResult"></div>
+
+                </div>
+
+            </div>
+
+            <div class="panel timeline-panel">
+
+                <div class="panel-title">
+                    MOVEMENT TIMELINE
+                </div>
+
+                <div id="mobilityData"></div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <script src="../../onionchat/caseProgress.js"></script>
+    <script src="workspace.js"></script>
+    <script src="crosscheck.js"></script>
+
+</body>
+
+</html>

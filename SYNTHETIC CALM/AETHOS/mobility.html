@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AETHOS Mobility Grid</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="interface-body">
+
+    <div class="grid-overlay"></div>
+
+    <main class="ami-shell">
+        <header class="ami-header">
+            <div>
+                <div class="system-status compact">
+                    <div class="status-dot"></div>
+                    <span>AETHOS CIVIC NETWORK</span>
+                </div>
+                <h2>AETHOS MOBILITY GRID</h2>
+                <p>Internal Route Estimation System — Veyra District</p>
+            </div>
+
+            <button id="backButton" class="small-button">RETURN</button>
+        </header>
+
+        <section class="tool-panel">
+            <div class="panel-title">ROUTE PARAMETERS</div>
+
+            <div class="route-form">
+                <label>
+                    ORIGIN
+                    <select id="originSelect"></select>
+                </label>
+
+                <label>
+                    DESTINATION
+                    <select id="destinationSelect"></select>
+                </label>
+
+                <button id="calculateButton">CALCULATE ROUTE</button>
+            </div>
+        </section>
+
+        <section id="resultPanel" class="result-panel hidden">
+            <div class="panel-title">ROUTE ANALYSIS</div>
+
+            <div class="result-grid">
+                <div class="result-card">
+                    <span>ORIGIN</span>
+                    <strong id="resultOrigin">—</strong>
+                </div>
+
+                <div class="result-card">
+                    <span>DESTINATION</span>
+                    <strong id="resultDestination">—</strong>
+                </div>
+
+                <div class="result-card">
+                    <span>DISTANCE</span>
+                    <strong id="resultDistance">—</strong>
+                </div>
+
+                <div class="result-card">
+                    <span>WALKING TIME</span>
+                    <strong id="resultWalking">—</strong>
+                </div>
+
+                <div class="result-card">
+                    <span>AUTONOMOUS TRANSIT</span>
+                    <strong id="resultTransit">—</strong>
+                </div>
+
+                <div class="result-card warning-card">
+                    <span>ACCESS STATUS</span>
+                    <strong id="resultAccess">—</strong>
+                </div>
+            </div>
+
+            <div id="routeNotice" class="route-notice"></div>
+        </section>
+
+        <section class="tool-panel directory-panel">
+            <div class="panel-title">ACTIVE POI DIRECTORY</div>
+            <div id="poiDirectory" class="poi-directory"></div>
+        </section>
+    </main>
+
+<script src="../onionchat/caseProgress.js"></script>
+<script src="mobility.js"></script>
+</body>
+</html>

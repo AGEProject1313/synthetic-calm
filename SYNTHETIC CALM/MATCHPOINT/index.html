@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+  <title>MatchPoint | Veyra Tennis Network</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app-shell">
+    <header class="topbar">
+      <div>
+        <div class="eyebrow">VEYRA TENNIS NETWORK</div>
+        <h1>MATCHPOINT</h1>
+        <p class="subtitle">Find players. Book courts. Play.</p>
+      </div>
+      <div class="status-dot"></div>
+    </header>
+
+    <section class="notice">
+      <strong>Verified Veyra citizens only.</strong>
+      Players use nickname-based profiles. Real names are hidden by default.
+    </section>
+
+    <section class="card-zone">
+      <article id="profileCard" class="profile-card">
+        <div class="photo-wrap">
+          <img id="profilePhoto" alt="Player photo" />
+          <div id="shieldBadge" class="shield hidden">PRIVACY SHIELD</div>
+        </div>
+        <div class="profile-body">
+          <div class="profile-head">
+            <div>
+              <h2 id="nickname"></h2>
+              <p id="meta"></p>
+            </div>
+            <span id="rating"></span>
+          </div>
+          <p id="bio" class="bio"></p>
+          <div id="tags" class="tags"></div>
+        </div>
+      </article>
+    </section>
+
+    <section class="actions">
+      <button id="skipBtn" class="btn skip" aria-label="Reject">✕</button>
+      <button id="connectBtn" class="btn connect" aria-label="Approve">✓</button>
+    </section>
+    <button id="prevBtn" class="btn previous">Previous</button>
+
+    <section id="messagePanel" class="message-panel hidden">
+      <h3>Connection Approved</h3>
+      <p id="connectionText"></p>
+      <button id="sendMessageBtn" class="message-btn">Send a message</button>
+
+      <div id="messageArea" class="message-area hidden">
+        <button id="askMatchBtn" class="chat-choice hidden">Ask about the match on Dec 15</button>
+        <div id="typingIndicator" class="typing hidden">MoonRelay is typing<span>.</span><span>.</span><span>.</span></div>
+        <div id="replyBox" class="bubble them hidden"></div>
+      </div>
+    </section>
+
+    <footer class="footer">Temporary investigator access · MatchPoint Veyra Gateway</footer>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
