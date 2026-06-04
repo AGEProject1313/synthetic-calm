@@ -173,6 +173,7 @@ p{
   font:800 12px Arial,sans-serif;
   text-transform:uppercase;
   letter-spacing:.08em;
+  color:#111111;
 }
 .sidebar{
   display:flex;

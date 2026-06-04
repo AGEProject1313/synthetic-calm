@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kairos Final Report | Synthetic Calm</title>
+<link rel="stylesheet" href="css/final-report.css">
+</head>
+<body>
+<main class="terminal-shell">
+<section id="locked-screen" class="panel locked-panel">
+<div class="system-label">KAIROS INVESTIGATION NETWORK</div>
+<h1>FINAL REPORT LOCKED</h1>
+<p>Critical evidence has not been authenticated.</p>
+<div class="status-line danger">STATUS: WAITING FOR AUTHORIZATION</div>
+</section>
+
+<section id="report-screen" class="hidden">
+<header class="final-header">
+<div>
+<p class="system-label">KAIROS INVESTIGATION NETWORK</p>
+<h1>CASE CLOSURE PROTOCOL</h1>
+<p class="muted">Synthetic Calm · Final Report Submission</p>
+</div>
+<div class="case-id"><span>CASE ID</span><strong>SC-1226-NV</strong></div>
+</header>
+
+<section id="phase-one" class="panel">
+<p class="phase">PHASE 01</p>
+<h2>Primary Resolution</h2>
+<p class="muted">Select responsible party, motive and method. All three must be correct.</p>
+<div class="form-grid">
+<label>Responsible party
+<select id="culprit">
+<option value="">Select...</option>
+<option value="ava">Ava Mercer</option>
+<option value="kessler">Markus Kessler</option>
+<option value="elias">Elias Rowe</option>
+<option value="sofia">Sofia Mirel</option>
+<option value="veil">Adrian Veil</option>
+<option value="giulia">Giulia Verra</option>
+</select>
+</label>
+<label>Motive
+<select id="motive">
+<option value="">Select...</option>
+<option value="money">Financial profit</option>
+<option value="jealousy">Jealousy</option>
+<option value="coverup">Protect Veyra from scandal</option>
+<option value="expose">Expose Veyra and Adrian Veil</option>
+<option value="revenge">Personal revenge against Nathan</option>
+<option value="blackmail">Blackmail</option>
+</select>
+</label>
+<label>Method
+<select id="method">
+<option value="">Select...</option>
+<option value="direct">Direct physical killing</option>
+<option value="sofia">Manipulated Sofia Mirel into killing Nathan</option>
+<option value="logs">Falsified the Aethos logs after the death</option>
+<option value="lin">Directed Nathan toward the LIN knowing the risks</option>
+<option value="hit">Ordered a professional execution</option>
+<option value="veil">Helped Veil activate the protocol manually</option>
+</select>
+</label>
+</div>
+<button id="validate-resolution" class="primary-button">Validate Resolution</button>
+<div id="resolution-feedback" class="feedback"></div>
+</section>
+
+<section id="phase-two" class="panel hidden">
+<p class="phase">PHASE 02</p>
+<h2>Evidence Matrix</h2>
+<p class="muted compact">Select the evidence included in your final report.</p>
+<div id="evidence-list" class="evidence-list"></div>
+<button id="submit-report" class="primary-button">Submit Final Report</button>
+</section>
+
+<section id="processing-screen" class="panel hidden">
+<p class="phase">PROCESSING</p>
+<h2>Cross-checking report...</h2>
+<div class="scan-lines"><span>Validating accusation</span><span>Comparing evidence chain</span><span>Reconstructing timeline</span><span>Generating final response</span></div>
+<div class="progress"><span id="progress-bar"></span></div>
+</section>
+
+<section id="result-screen" class="panel hidden">
+<p class="phase">FINAL RESPONSE</p>
+<h2>CASE RESOLUTION CONFIRMED</h2>
+<div class="score-box"><span>Investigation Accuracy</span><strong id="accuracy-score">0%</strong></div>
+<div class="verdict-grid">
+<div><span>Responsible Party</span><strong>Giulia Verra</strong></div>
+<div><span>Motive</span><strong>Expose Veyra and Adrian Veil</strong></div>
+<div><span>Method</span><strong>Nathan was directed toward the LIN despite known risks.</strong></div>
+</div>
+<article class="final-text">
+<p>Final report accepted.</p>
+<p>Giulia Verra is responsible for Nathan Verra's death. She did not need to kill him directly. She created the conditions that made his death useful.</p>
+<p>The recovered Synthetic Calm draft proves she knew of Nathan's role before the incident and had already built the article around a fatal failure inside Veyra.</p>
+<p>Veyra's automated systems caused the fatal event. Giulia made sure Nathan would be there when they did.</p>
+</article>
+<div id="evidence-breakdown" class="breakdown"></div>
+</section>
+</section>
+</main>
+<script src="../onionchat/caseProgress.js"></script>
+<script src="js/final-report.js"></script>
+</body>
+</html>

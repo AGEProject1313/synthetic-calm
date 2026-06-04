@@ -85,6 +85,25 @@ const CASE_PROGRESS = {
     SOFIA_BADGE_MESSAGE_SENT: "sofia_badge_message_sent",
     SOFIA_BADGE_CONFIRMED: "sofia_badge_confirmed",
     SOFIA_CONTACT_UNLOCKED: "sofia_contact_unlocked",
+    // BEACON / SYNTHETIC CALM
+    GIULIA_BEACON_CARD_FOUND: "giulia_beacon_card_found",
+    BEACON_SITE_OPENED: "beacon_site_opened",
+    BEACON_ARCHIVE_OPENED: "beacon_archive_opened",
+    BEACON_GIULIA_PROFILE_OPENED: "beacon_giulia_profile_opened",
+    SYNTHETIC_CALM_PAGE_OPENED: "synthetic_calm_page_opened",
+    SYNTHETIC_CALM_LOGIN_ATTEMPTED: "synthetic_calm_login_attempted",
+    SYNTHETIC_CALM_UNLOCKED: "synthetic_calm_unlocked",
+    SYNTHETIC_CALM_DRAFT_REVIEWED: "synthetic_calm_draft_reviewed",
+
+    // FINAL REPORT
+    FINAL_REPORT_OPENED: "final_report_opened",
+    FINAL_REPORT_LOCKED_VIEWED: "final_report_locked_viewed",
+    FINAL_REPORT_UNLOCKED: "final_report_unlocked",
+    FINAL_REPORT_RESOLUTION_VALIDATED: "final_report_resolution_validated",
+    FINAL_REPORT_SUBMITTED: "final_report_submitted",
+    FINAL_REPORT_EVIDENCE_SUBMITTED: "final_report_evidence_submitted",
+    CASE_SOLVED: "case_solved",
+    FINAL_ACCURACY_RECORDED: "final_accuracy_recorded",
 
 
     // CASE PHASES

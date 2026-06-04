@@ -37,4 +37,22 @@ if (loginForm) {
         }
 
     });
+    if (
+    username === "prova"
+    &&
+    password === "prova"
+) {
+
+    sessionStorage.setItem(
+        "aethosAuth",
+        "granted"
+    );
+
+    if (typeof setProgress === "function") {
+        setProgress(CASE_PROGRESS.AETHOS_CREDENTIALS_SENT);
+    }
+
+    window.location.href =
+    "../dashboard/workspace.html";
+}
 }
