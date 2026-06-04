@@ -197,6 +197,30 @@ function renderResident(id) {
 
     subjectName.innerHTML = resident.name;
 
+    if (
+        typeof setProgress === "function"
+        &&
+        typeof CASE_PROGRESS !== "undefined"
+    ) {
+        switch (id) {
+            case "nathan":
+                setProgress(CASE_PROGRESS.NATHAN_PROFILE_OPENED);
+                break;
+
+            case "ava":
+                setProgress(CASE_PROGRESS.AVA_PROFILE_OPENED);
+                break;
+
+            case "elias":
+                setProgress(CASE_PROGRESS.ELIAS_PROFILE_OPENED);
+                break;
+
+            case "daniel":
+                setProgress(CASE_PROGRESS.KESSLER_PROFILE_OPENED);
+                break;
+        }
+    }
+
     createRows(resident.lifecare, lifecareData);
     createRows(resident.access, accessData);
     createRows(resident.mobility, mobilityData);
