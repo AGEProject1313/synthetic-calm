@@ -115,6 +115,34 @@ function runCorrelationCheck() {
 
     const correlation = findCorrelation(selectedSubjects);
 
+    if (
+    typeof setProgress === "function"
+    &&
+    typeof CASE_PROGRESS !== "undefined"
+) {
+
+    const key = normalizeSubjects(selectedSubjects);
+
+    switch (key) {
+
+        case "ava+nathan":
+            setProgress("ava_nathan_crosscheck_viewed");
+            break;
+
+        case "daniel+nathan":
+            setProgress("kessler_nathan_crosscheck_viewed");
+            break;
+
+        case "elias+nathan":
+            setProgress("elias_nathan_crosscheck_viewed");
+            break;
+
+        case "ava+daniel":
+            setProgress("ava_kessler_crosscheck_viewed");
+            break;
+    }
+}
+
     if (!correlation) {
         renderCorrelationRows([
             ["NO CORRELATION FOUND", "No verified pattern detected"],

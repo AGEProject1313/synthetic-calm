@@ -45,6 +45,18 @@ const CASE_PROGRESS = {
     GIULIA_FIRST_MESSAGE_SENT: "giulia_first_message_sent",
     GIULIA_NATHAN_PRIVATE_CONTEXT_FOUND: "giulia_nathan_private_context_found",
 
+    AVA_NATHAN_CROSSCHECK_VIEWED:
+    "ava_nathan_crosscheck_viewed",
+
+    KESSLER_NATHAN_CROSSCHECK_VIEWED:
+    "kessler_nathan_crosscheck_viewed",
+
+    ELIAS_NATHAN_CROSSCHECK_VIEWED:
+    "elias_nathan_crosscheck_viewed",
+
+    AVA_KESSLER_CROSSCHECK_VIEWED:
+    "ava_kessler_crosscheck_viewed",
+
 
     // BLACK PASS / SOFIA TRACK
     BLACK_PASS_LOG_REVIEWED: "black_pass_log_reviewed",
