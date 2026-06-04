@@ -180,6 +180,41 @@ function calculateRoute() {
     const origin = getPoi(originSelect.value);
     const destination = getPoi(destinationSelect.value);
 
+    if (typeof setProgress === "function") {
+
+    if (
+        origin.id === "N2"
+        &&
+        destination.id === "S1"
+    ) {
+        setProgress("foodhall_to_lin_route_checked");
+    }
+
+    if (
+        origin.id === "S1"
+        &&
+        destination.id === "N2"
+    ) {
+        setProgress("lin_to_foodhall_route_checked");
+    }
+
+    if (
+        origin.id === "P5"
+        &&
+        destination.id === "N5"
+    ) {
+        setProgress("matchpoint_to_cinema_route_checked");
+    }
+
+    if (
+        origin.id === "L12"
+        &&
+        destination.id === "S1"
+    ) {
+        setProgress("nathan_home_to_lin_route_checked");
+    }
+}
+
     if (!origin || !destination) return;
 
     const meters = routeDistance(origin, destination);

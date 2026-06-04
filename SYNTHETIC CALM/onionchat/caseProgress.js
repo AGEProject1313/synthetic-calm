@@ -57,6 +57,32 @@ const CASE_PROGRESS = {
     AVA_KESSLER_CROSSCHECK_VIEWED:
     "ava_kessler_crosscheck_viewed",
 
+    FOODHALL_TO_LIN_ROUTE_CHECKED:
+    "foodhall_to_lin_route_checked",
+
+    LIN_TO_FOODHALL_ROUTE_CHECKED:
+    "lin_to_foodhall_route_checked",
+
+    MATCHPOINT_TO_CINEMA_ROUTE_CHECKED:
+    "matchpoint_to_cinema_route_checked",
+
+    NATHAN_HOME_TO_LIN_ROUTE_CHECKED:
+    "nathan_home_to_lin_route_checked",
+
+    MATCHPOINT_OPENED:
+    "matchpoint_opened",
+
+SOFIA_PROFILE_FOUND:
+    "sofia_profile_found",
+
+SOFIA_CONTACT_ATTEMPTED:
+    "sofia_contact_attempted",
+
+SOFIA_MATCH_QUESTION_SENT:
+    "sofia_match_question_sent",
+
+SOFIA_MATCH_CONFIRMED:
+    "sofia_match_confirmed",
 
     // BLACK PASS / SOFIA TRACK
     BLACK_PASS_LOG_REVIEWED: "black_pass_log_reviewed",

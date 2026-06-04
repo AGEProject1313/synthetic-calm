@@ -84,6 +84,12 @@ function previous(){
 
 function approveConnection(){
   const p = currentProfile();
+  if (
+    p.target &&
+    typeof setProgress === "function"
+) {
+    setProgress("sofia_profile_found");
+}
   el('messagePanel').classList.remove('hidden');
   el('messageArea').classList.add('hidden');
   el('askMatchBtn').classList.add('hidden');
@@ -95,6 +101,12 @@ function approveConnection(){
 
 function sendMessage(){
   const p = currentProfile();
+  if (
+    p.target &&
+    typeof setProgress === "function"
+) {
+    setProgress("sofia_contact_attempted");
+}
   el('messageArea').classList.remove('hidden');
   el('typingIndicator').classList.add('hidden');
   el('replyBox').classList.add('hidden');
@@ -110,11 +122,17 @@ function sendMessage(){
 }
 
 function askAboutMatch(){
+  if (typeof setProgress === "function") {
+    setProgress("sofia_match_question_sent");
+}
   el('askMatchBtn').classList.add('hidden');
   el('typingIndicator').classList.remove('hidden');
   el('replyBox').classList.add('hidden');
 
   setTimeout(() => {
+    if (typeof setProgress === "function") {
+    setProgress("sofia_match_confirmed");
+}
     el('typingIndicator').classList.add('hidden');
     el('replyBox').classList.remove('hidden');
     el('replyBox').innerHTML = `Yes. I played at Lake Pavilion on Dec 15.<br><br>The other player was <b>IronServe92</b>.<br><br>We finished the match, spoke for a minute, then he left alone. If you need to verify him, look for IronServe92 in the player list.`;
@@ -126,5 +144,10 @@ el('prevBtn').addEventListener('click', previous);
 el('connectBtn').addEventListener('click', approveConnection);
 el('sendMessageBtn').addEventListener('click', sendMessage);
 el('askMatchBtn').addEventListener('click', askAboutMatch);
+
+if (typeof setProgress === "function") {
+    setProgress("matchpoint_opened");
+    setProgress("ironserve92_identified");
+}
 
 render();
