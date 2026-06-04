@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Final Call - Giulia Verra</title>
+  <link rel="stylesheet" href="final-call.css" />
+  <script src="final-call.js" defer></script>
+</head>
+
+<body>
+  <main class="phone-frame">
+
+    <section id="reportScreen" class="screen active">
+      <div class="eyebrow">Case Report Completed</div>
+      <h1>Evidence Package Ready</h1>
+      <p>Your final report has been compiled.</p>
+      <p>The evidence is ready to be sent to the client.</p>
+
+      <button id="sendBtn" class="primary-btn">
+        Send Evidence Package to Client
+      </button>
+
+      <div id="sendStatus" class="status-line"></div>
+      <div class="footer-note">Kairos Detectives // KD-002</div>
+    </section>
+
+    <section id="incomingScreen" class="screen">
+      <div class="call-status">Incoming Call</div>
+      <div class="avatar">GV</div>
+      <div class="caller-name">Giulia Verra</div>
+      <div class="subline">Auto-answer in <span id="countdown">3</span></div>
+
+      <div class="call-actions">
+        <div class="call-button decline">✕</div>
+        <div class="call-button accept">✓</div>
+      </div>
+
+      <div class="footer-note">Connection Secured</div>
+    </section>
+
+    <section id="activeCallScreen" class="screen">
+      <div class="call-status">Call in Progress</div>
+      <div class="avatar">GV</div>
+      <div class="caller-name">Giulia Verra</div>
+      <div id="timer" class="timer">00:00</div>
+
+      <div class="speaker-indicator">
+        <span class="speaker-dot"></span>
+        Speaker Active
+      </div>
+
+      <div class="wave">
+        <span></span><span></span><span></span><span></span><span></span>
+      </div>
+
+      <div class="footer-note">Audio Transmission Active</div>
+    </section>
+
+    <section id="endedScreen" class="screen">
+      <div class="avatar">GV</div>
+      <div class="caller-name">Giulia Verra</div>
+      <div class="ended">Call Terminated</div>
+      <p>Connection lost.</p>
+      <div class="footer-note">Case Closed</div>
+    </section>
+
+  </main>
+</body>
+</html>
