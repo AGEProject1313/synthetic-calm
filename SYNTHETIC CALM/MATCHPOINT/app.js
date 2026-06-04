@@ -9,7 +9,7 @@ const profiles = [
   {nick:'AxisWren', age:41, photo:'assets/profiles/008.jpg', bio:'Reliable doubles partner. I like structured games and punctual players.', tags:['Doubles', 'Tactical', 'Punctual'], rating:'3.5', shield:false, target:false},
   {nick:'KiteSignal', age:30, photo:'assets/profiles/009.jpg', bio:'Weekend player. Slice too much, laugh too often.', tags:['Slice', 'Weekend', 'Casual'], rating:'3.0', shield:false, target:false},
   {nick:'AmberLoop', age:28, photo:'assets/profiles/010.jpg', bio:'Evening matches, decent serve, better third set.', tags:['Evening Match', 'Singles', 'Endurance'], rating:'3.5', shield:false, target:false},
-  {nick:'MoonRelay', age:34, photo:'assets/profiles/011.jpg', bio:'Nights are quieter. Less noise. Better rallies.', tags:['Night Match', 'Lake Pavilion', 'Intermediate+', 'Hard Court'], rating:'4.0', shield:true, target:true},
+  {nick:'MoonRelay', age:34, photo:'assets/profiles/011.jpg', bio:'Nights are quieter. Less noise. Better rallies.', tags:['Night Match', 'Lake Pavilion', 'Intermediate+'], rating:'4.0', shield:true, target:true},
   {nick:'PolarFrame', age:37, photo:'assets/profiles/012.jpg', bio:'Patient from the baseline. Not fast, but difficult to move.', tags:['Baseline', 'Defensive', 'Singles'], rating:'3.5', shield:false, target:false},
   {nick:'UrbanSwan', age:31, photo:'assets/profiles/013.jpg', bio:'Clean technique, soft hands at the net, prefers early evenings.', tags:['Net Play', 'Evening Match', 'Mixed Doubles'], rating:'3.0', shield:false, target:false},
   {nick:'CrimsonMap', age:33, photo:'assets/profiles/014.jpg', bio:'Knows every court in Veyra. Plays aggressive from the first point.', tags:['Aggressive', 'City Courts', 'Singles'], rating:'4.0', shield:false, target:false},
@@ -54,7 +54,7 @@ function currentProfile(){
 function resetMessagePanel(){
   el('messagePanel').classList.add('hidden');
   el('messageArea').classList.add('hidden');
-  el('askMatchBtn').classList.add('hidden');
+  el('askPassBtn').classList.add('hidden');
   el('typingIndicator').classList.add('hidden');
   el('replyBox').classList.add('hidden');
   el('replyBox').innerHTML = '';
@@ -92,7 +92,7 @@ function approveConnection(){
 }
   el('messagePanel').classList.remove('hidden');
   el('messageArea').classList.add('hidden');
-  el('askMatchBtn').classList.add('hidden');
+  el('askPassBtn').classList.add('hidden');
   el('typingIndicator').classList.add('hidden');
   el('replyBox').classList.add('hidden');
   el('replyBox').innerHTML = '';
@@ -113,9 +113,9 @@ function sendMessage(){
   el('replyBox').innerHTML = '';
 
   if(p.target){
-    el('askMatchBtn').classList.remove('hidden');
+    el('askPassBtn').classList.remove('hidden');
   } else {
-    el('askMatchBtn').classList.add('hidden');
+    el('askPassBtn').classList.add('hidden');
     el('replyBox').classList.remove('hidden');
     el('replyBox').textContent = 'Message request sent. No reply yet.';
   }
@@ -125,7 +125,7 @@ function askAboutBlackPass(){
   if (typeof setProgress === "function") {
     setProgress("sofia_match_question_sent");
 }
-  el('askMatchBtn').classList.add('hidden');
+  el('askPassBtn').classList.add('hidden');
   el('typingIndicator').classList.remove('hidden');
   el('replyBox').classList.add('hidden');
 
@@ -148,7 +148,7 @@ function askAboutBlackPass(){
   Of course. I just need to know your full name first.<br><br>
 
   <b>MoonRelay:</b><br>
-  My name is Sofia Mirel.<br><br>
+  My name is Sofia Mirel. I think that guy, IronServe92, took it from my tennis bag. <br><br>
 
   <b>You:</b><br>
   Thanks. I'll message you to arrange the handover.
@@ -160,7 +160,7 @@ el('skipBtn').addEventListener('click', next);
 el('prevBtn').addEventListener('click', previous);
 el('connectBtn').addEventListener('click', approveConnection);
 el('sendMessageBtn').addEventListener('click', sendMessage);
-el('askMatchBtn').addEventListener('click', askAboutBlackPas);
+el('askPassBtn').addEventListener('click', askAboutBlackPass);
 
 if (typeof setProgress === "function") {
     setProgress("matchpoint_opened");
