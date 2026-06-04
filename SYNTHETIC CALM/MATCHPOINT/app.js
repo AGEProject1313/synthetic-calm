@@ -121,7 +121,7 @@ function sendMessage(){
   }
 }
 
-function askAboutMatch(){
+function askAboutBlackPass(){
   if (typeof setProgress === "function") {
     setProgress("sofia_match_question_sent");
 }
@@ -131,11 +131,28 @@ function askAboutMatch(){
 
   setTimeout(() => {
     if (typeof setProgress === "function") {
-    setProgress("sofia_match_confirmed");
+  setProgress("sofia_badge_confirmed");
+  setProgress("sm4418_linked_to_sofia");
+  setProgress("sofia_contact_unlocked");  
 }
     el('typingIndicator').classList.add('hidden');
     el('replyBox').classList.remove('hidden');
-    el('replyBox').innerHTML = `Yes. I played at Lake Pavilion on Dec 15.<br><br>The other player was <b>IronServe92</b>.<br><br>We finished the match, spoke for a minute, then he left alone. If you need to verify him, look for IronServe92 in the player list.`;
+    el('replyBox').innerHTML = `
+  <b>You:</b><br>
+  Hi, I think I have your black pass. Is the number SM-4418?<br><br>
+
+  <b>MoonRelay:</b><br>
+  Yes! Where did you find it? Can I have it back?<br><br>
+
+  <b>You:</b><br>
+  Of course. I just need to know your full name first.<br><br>
+
+  <b>MoonRelay:</b><br>
+  My name is Sofia Mirel.<br><br>
+
+  <b>You:</b><br>
+  Thanks. I'll message you to arrange the handover.
+`;
   }, 12000);
 }
 
@@ -143,7 +160,7 @@ el('skipBtn').addEventListener('click', next);
 el('prevBtn').addEventListener('click', previous);
 el('connectBtn').addEventListener('click', approveConnection);
 el('sendMessageBtn').addEventListener('click', sendMessage);
-el('askMatchBtn').addEventListener('click', askAboutMatch);
+el('askMatchBtn').addEventListener('click', askAboutBlackPas);
 
 if (typeof setProgress === "function") {
     setProgress("matchpoint_opened");
