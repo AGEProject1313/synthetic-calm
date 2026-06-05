@@ -5,6 +5,7 @@ const POIS = [
     { id: "A3", district: "Aurex", name: "Citizen Registry Bureau", access: "PUBLIC", x: 280, y: 360 },
     { id: "A4", district: "Aurex", name: "Data Compliance Authority", access: "BLUE", x: 320, y: -260 },
     { id: "A5", district: "Aurex", name: "Public Services Administration", access: "PUBLIC", x: -420, y: -80 },
+    { id: "A6", district: "Aurex", name: "Veil Residence", access: "BLACK", x: 180, y: -180 },
 
     // LYRA
     { id: "L1", district: "Lyra", name: "Primary School", access: "PUBLIC", x: -1320, y: -920 },

@@ -1,0 +1,180 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+    min-height: 100%;
+    touch-action: manipulation;
+    overscroll-behavior: none;
+}
+
+body {
+    min-height: 100vh;
+    min-height: 100dvh;
+    background:
+        radial-gradient(circle at top, rgba(157,170,116,0.12), transparent 34%),
+        #05070a;
+    color: #0c2417;
+    font-family: monospace;
+    display: grid;
+    place-items: center;
+    padding: 12px;
+    overflow-x: hidden;
+}
+
+.phone-shell {
+    width: min(430px, 100%);
+    display: grid;
+    gap: 14px;
+}
+
+.phone {
+    background: linear-gradient(145deg, #2b3033, #14191c);
+    border: 2px solid #3e4549;
+    border-radius: 30px;
+    padding: 22px 16px;
+    box-shadow: 0 28px 80px rgba(0,0,0,0.55);
+}
+
+.brand {
+    color: rgba(255,255,255,0.42);
+    text-align: center;
+    font-size: 11px;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+}
+
+.objective {
+    margin-bottom: 12px;
+    color: rgba(255,255,255,0.62);
+    text-align: center;
+    font-size: 11px;
+    letter-spacing: 1.6px;
+    line-height: 1.5;
+}
+
+.objective strong { color: #d7e2a5; }
+
+.screen {
+    position: relative;
+    background: #9aaa74;
+    border: 8px solid #111;
+    border-radius: 14px;
+    padding: 10px;
+    box-shadow: inset 0 0 28px rgba(0,0,0,0.22);
+}
+
+.screen-top {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    font-size: 13px;
+    margin-bottom: 8px;
+}
+
+canvas {
+    width: 100%;
+    max-height: 58dvh;
+    aspect-ratio: 1 / 1;
+    image-rendering: pixelated;
+    display: block;
+    background: #9aaa74;
+    touch-action: none;
+}
+
+.message {
+    position: absolute;
+    inset: 48px 18px 18px;
+    display: grid;
+    place-items: center;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    background: rgba(154,170,116,0.78);
+    padding: 12px;
+}
+
+.message.hidden { display: none; }
+
+.start-button, .controls button {
+    border: none;
+    color: white;
+    background: linear-gradient(145deg, #434b50, #1d2428);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.12), 0 6px 16px rgba(0,0,0,0.32);
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+}
+
+.start-button {
+    width: 100%;
+    min-height: 52px;
+    margin-top: 14px;
+    border-radius: 999px;
+    letter-spacing: 3px;
+    font-size: 13px;
+}
+
+.controls {
+    margin-top: 14px;
+    display: grid;
+    justify-content: center;
+    gap: 8px;
+    text-align: center;
+}
+
+.key-row {
+    display: grid;
+    grid-template-columns: repeat(3, 70px);
+    gap: 8px;
+}
+
+.key {
+    width: 70px;
+    height: 56px;
+    border-radius: 14px;
+    font-size: 22px;
+}
+
+.key-up {
+    justify-self: center;
+    grid-column: 1;
+}
+
+.unlock-panel {
+    padding: 20px;
+    border-radius: 22px;
+    border: 1px solid rgba(157,255,194,0.18);
+    background: rgba(8, 18, 16, 0.92);
+    color: white;
+    font-family: 'Manrope', Arial, sans-serif;
+}
+
+.unlock-panel.hidden { display: none; }
+.unlock-title { color: #9dffc2; font-size: 11px; letter-spacing: 3px; margin-bottom: 18px; }
+.credential-row { display: flex; justify-content: space-between; gap: 12px; padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,0.08); }
+.credential-row span { opacity: 0.45; }
+.credential-row strong { font-size: 20px; text-align: right; }
+.unlock-panel p { margin-top: 18px; color: rgba(255,255,255,0.68); line-height: 1.7; }
+
+@media (max-width: 430px) {
+    body { padding: 8px; align-items: start; }
+    .phone-shell { gap: 10px; }
+    .phone { padding: 18px 12px; border-radius: 24px; }
+    .screen { padding: 8px; border-width: 7px; }
+    .screen-top { font-size: 12px; }
+    .key-row { grid-template-columns: repeat(3, minmax(0, 1fr)); width: 100%; }
+    .controls { width: 100%; }
+    .key { width: 100%; height: 58px; }
+    .unlock-panel { padding: 18px; }
+    .credential-row { flex-direction: column; gap: 5px; }
+    .credential-row strong { text-align: left; font-size: 19px; }
+}
+
+@media (max-height: 720px) {
+    body { place-items: start center; }
+    .phone { padding-top: 14px; padding-bottom: 14px; }
+    .brand { margin-bottom: 8px; }
+    .objective { margin-bottom: 8px; }
+    .start-button { min-height: 46px; margin-top: 10px; }
+    .controls { margin-top: 10px; }
+    .key { height: 48px; }
+}

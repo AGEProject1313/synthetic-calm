@@ -72,17 +72,21 @@ const CASE_PROGRESS = {
     MATCHPOINT_OPENED:
     "matchpoint_opened",
 
-SOFIA_PROFILE_FOUND:
+    SOFIA_PROFILE_FOUND:
     "sofia_profile_found",
 
-SOFIA_CONTACT_ATTEMPTED:
+    SOFIA_CONTACT_ATTEMPTED:
     "sofia_contact_attempted",
 
-SOFIA_MATCH_QUESTION_SENT:
+    SOFIA_MATCH_QUESTION_SENT:
     "sofia_match_question_sent",
 
-SOFIA_MATCH_CONFIRMED:
+     SOFIA_MATCH_CONFIRMED:
     "sofia_match_confirmed",
+
+    NATHAN_DRIVE_SENT: "nathan_drive_sent",
+    NATHAN_DRIVE_OPENED: "nathan_drive_opened",
+    GIULIA_CREDENTIALS_UNLOCKED: "giulia_credentials_unlocked",
 
     // BLACK PASS / SOFIA TRACK
     BLACK_PASS_LOG_REVIEWED: "black_pass_log_reviewed",

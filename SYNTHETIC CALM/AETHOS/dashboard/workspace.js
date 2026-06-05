@@ -8,7 +8,6 @@ if (sessionStorage.getItem("aethosAuth") !== "granted") {
 
 const subjectName = document.getElementById("subjectName");
 const lifecareData = document.getElementById("lifecareData");
-const accessData = document.getElementById("accessData");
 const mobilityData = document.getElementById("mobilityData");
 const buttons = document.querySelectorAll(".subject-btn");
 
@@ -20,22 +19,14 @@ const residents = {
 
         name: "Nathan Verra",
 
-        lifecare: [
-            ["STATUS", "UPDATING"],
-            ["COMPLIANCE STATUS", "UNDER REVIEW"],
-            ["BEHAVIORAL INDEX", "ELEVATED RISK"],
-            ["MEDICAL NOTES", "Behavioral monitoring recommended"]
-        ],
-
-         access: [
-            ["11 DEC — 21:11", "NOVA COMMONS — Sector E-03"],
-            ["15 DEC — 08:42", "SYSTEMS OVERSIGHT BUILDING"],
-            ["15 DEC — 18:00", "LAKE PAVILION"],
-            ["15 DEC — 21:37", "LEGACY SERVICE CORRIDOR"],
-            ["15 DEC — 22:13", "RESTRICTED INFRASTRUCTURE NODE"],
-            ["15 DEC — 22:41", "ACCESS TRACE TERMINATED"]
-        ],
-
+lifecare: [
+    ["STATUS", "UPDATING"],
+    ["ACCESS LEVEL", "WHITE PASS"],
+    ["RESIDENTIAL ADDRESS", "LYRA DISTRICT — L12 RESIDENTIAL MODULE AREA"],
+    ["COMPLIANCE STATUS", "UNDER REVIEW"],
+    ["BEHAVIORAL INDEX", "ELEVATED RISK"],
+    ["MEDICAL NOTES", "Behavioral monitoring recommended"]
+],
          mobility: [
             ["11 DEC — 21:09", "NOVA COMMONS — Sector E-03"],
             ["15 DEC — 07:42", "Departure from LYRA B214"],
@@ -47,56 +38,32 @@ const residents = {
 
     },
 
- elias: {
+elias: {
 
     name: "Elias Rowe",
 
     lifecare: [
-        ["STATUS", "ACTIVE"],
-        ["COMPLIANCE STATUS", "Stable"],
-        ["BEHAVIORAL INDEX", "Normal"],
-        ["MEDICAL NOTES", "No active anomalies"]
-    ],
-
-    access: [
-        ["13 DEC — 22:44", "LYRA DISTRICT — L10 Residential Corridor"],
-        ["13 DEC — 22:51", "LYRA DISTRICT — L11 Residential Corridor"],
-        ["13 DEC — 23:03", "LYRA DISTRICT — L12 Residential Module Area"],
-
-        ["14 DEC — 07:18", "LYRA DISTRICT — L10 Residential Corridor"],
-        ["14 DEC — 07:26", "LYRA DISTRICT — L11 Residential Corridor"],
-        ["14 DEC — 07:34", "LYRA DISTRICT — L12 Residential Module Area"],
-
-        ["14 DEC — 23:16", "LIFECARE SYSTEMS — Clinical Archive Console"],
-        ["14 DEC — 23:19", "RESTRICTED MEDICAL ARCHIVE — Manual Review Session"],
-
-        ["15 DEC — 06:52", "LYRA DISTRICT — L10 Residential Corridor"],
-        ["15 DEC — 07:01", "LYRA DISTRICT — L11 Residential Corridor"],
-        ["15 DEC — 07:09", "LYRA DISTRICT — L12 Residential Module Area"],
-
-        ["15 DEC — 12:41", "Restricted Medical Archive"],
-        ["15 DEC — 19:14", "AUREX Administrative Access"]
-    ],
+    ["STATUS", "ACTIVE"],
+    ["ACCESS LEVEL", "BLUE PASS"],
+    ["RESIDENTIAL ADDRESS", "LYRA DISTRICT — L12 RESIDENTIAL MODULE AREA"],
+    ["COMPLIANCE STATUS", "Stable"],
+    ["BEHAVIORAL INDEX", "Normal"],
+    ["MEDICAL NOTES", "No active anomalies"]
+],
 
     mobility: [
         ["13 DEC — 22:41", "Entry detected — Lyra Residential Cluster"],
-        ["13 DEC — 22:44", "L10 Residential Corridor"],
-        ["13 DEC — 22:51", "L11 Residential Corridor"],
         ["13 DEC — 23:03", "L12 Residential Module Area"],
         ["13 DEC — 23:11", "Exit detected — Lyra Residential Cluster"],
 
-        ["14 DEC — 07:18", "L10 Residential Corridor"],
-        ["14 DEC — 07:26", "L11 Residential Corridor"],
         ["14 DEC — 07:34", "L12 Residential Module Area"],
         ["14 DEC — 07:42", "Route terminated — Lyra East Exit"],
 
-        ["14 DEC — 23:16", "Remote LifeCare archive session opened"],
-        ["14 DEC — 23:19", "Manual clinical record review executed"],
-
-        ["15 DEC — 06:52", "L10 Residential Corridor"],
-        ["15 DEC — 07:01", "L11 Residential Corridor"],
         ["15 DEC — 07:09", "L12 Residential Module Area"],
-        ["15 DEC — 07:17", "Route terminated — Lyra South Axis"]
+        ["15 DEC — 07:17", "Route terminated — Lyra South Axis"],
+
+        ["15 DEC — 08:12", "LifeCare Systems"],
+        ["15 DEC — 19:14", "Aurex District"]
     ]
 
 },
@@ -106,55 +73,46 @@ const residents = {
         name: "Ava Mercer",
 
         lifecare: [
-            ["STATUS", "ACTIVE"],
-            ["COMPLIANCE STATUS", "Stable"],
-            ["BEHAVIORAL INDEX", "Normal"],
-            ["MEDICAL NOTES", "No active anomalies"]
-        ],
-
-        access: [
-            ["11 DEC — 21:14", "NOVA COMMONS — Sector E-03"],
-            ["15 DEC — 06:41", "Transit Operations"],
-            ["15 DEC — 14:11", "Logistics Coordination Hub"],
-            ["15 DEC — 22:04", "Outbound Transport Sector"]
-        ],
+    ["STATUS", "ACTIVE"],
+    ["ACCESS LEVEL", "BLUE PASS"],
+    ["RESIDENTIAL ADDRESS", "LYRA DISTRICT — L12 RESIDENTIAL MODULE AREA"],
+    ["COMPLIANCE STATUS", "Stable"],
+    ["BEHAVIORAL INDEX", "Normal"],
+    ["MEDICAL NOTES", "No active anomalies"]
+],
 
         mobility: [
-            ["11 DEC — 21:12", "NOVA COMMONS — Sector E-03"],
-            ["15 DEC — 06:38", "Operations Route 7"],
-            ["15 DEC — 14:08", "Central Transit Axis"],
-            ["15 DEC — 22:00", "Cargo Platform"]
-        ]
+    ["11 DEC — 21:12", "NOVA COMMONS — Sector E-03"],
+    ["15 DEC — 06:38", "Operations Route 7"],
+    ["15 DEC — 14:08", "Central Transit Axis"],
+    ["15 DEC — 21:42", "L12 Residential Module Area"],
+    ["15 DEC — 22:45", "Outbound Transport Sector"]
+]
 
     },
 
-    daniel: {
+daniel: {
 
-        name: "Daniel Kessler",
+    name: "Daniel Kessler",
 
-        lifecare: [
-            ["STATUS", "ACTIVE"],
-            ["COMPLIANCE STATUS", "Stable"],
-            ["BEHAVIORAL INDEX", "Suppressed"],
-            ["MEDICAL NOTES", "Monitoring frequency increased"]
-        ],
+    lifecare: [
+    ["STATUS", "ACTIVE"],
+    ["ACCESS LEVEL", "BLUE PASS"],
+    ["RESIDENTIAL ADDRESS", "LYRA DISTRICT — L12 RESIDENTIAL MODULE AREA"],
+    ["COMPLIANCE STATUS", "Stable"],
+    ["BEHAVIORAL INDEX", "Suppressed"],
+    ["MEDICAL NOTES", "Monitoring frequency increased"]
+],
 
-        access: [
-            ["15 DEC — 07:55", "AETHOS Integrity Monitoring"],
-            ["15 DEC — 09:30", "Review Room C-12 — No Show"],
-            ["15 DEC — 18:22", "Access Control Hub"],
-            ["15 DEC — 22:44", "Legacy Containment Review Access"]
-        ],
+    mobility: [
+    ["15 DEC — 07:51", "Security Transit Route"],
+    ["15 DEC — 18:18", "Aurex Control Sector"],
+    ["15 DEC — 20:07", "AUREX — Veil Residence"],
+    ["15 DEC — 21:50", "AUREX — Veil Residence"],
+    ["15 DEC — 22:45", "LYRA DISTRICT — Residential Module Kessler"]
+],
 
-        mobility: [
-            ["15 DEC — 07:51", "Security Transit Route"],
-            ["15 DEC — 18:18", "Aurex Control Sector"],
-            ["15 DEC — 22:41", "Remote Security Session"],
-            ["15 DEC — 22:44", "System Review Access"]
-        ]
-
-    }
-
+},
 };
 
 /* CREATE ROWS */
@@ -222,7 +180,6 @@ function renderResident(id) {
     }
 
     createRows(resident.lifecare, lifecareData);
-    createRows(resident.access, accessData);
     createRows(resident.mobility, mobilityData);
 
 }

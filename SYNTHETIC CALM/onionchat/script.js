@@ -62,6 +62,7 @@ document.addEventListener("DOMContentLoaded", () => {
     bindEvents();
     scheduleNextGiuliaPeriodicMessage();
     startProgressWatcher();
+    startNathanDriveWatcher();
     startJavierPendingOperationWatcher();
 });
 
@@ -1233,7 +1234,16 @@ function createFileMessage(message) {
         </div>
     `;
 
-    card.addEventListener("click", () => openFileViewer(message));
+card.addEventListener("click", () => {
+
+    if (message.url) {
+        window.location.href = message.url;
+        return;
+    }
+
+    openFileViewer(message);
+
+});
 
     return card;
 }
@@ -2353,4 +2363,45 @@ function getQGProgressHint() {
 function resetOnionChatSave() {
     localStorage.removeItem(STORAGE_KEY);
     location.reload();
+}
+
+function startNathanDriveWatcher() {
+
+    setInterval(() => {
+
+        if (
+            hasProgress("javier_sofia_mirel_interrogate_received") &&
+            !hasProgress("nathan_drive_sent")
+        ) {
+
+            const marco = contacts.marco;
+
+            marco.messages.push({
+                from: "contact",
+                text: "I found something. After reviewing Nathan's data trail I recovered a partial personal cloud backup. Only a few recent files survived.",
+                time: getCurrentTime()
+            });
+
+            marco.messages.push({
+                from: "contact",
+                type: "file",
+                fileKind: "DRV",
+                text: "Recovered personal cloud archive",
+                fileName: "NATHAN_DRIVE",
+                url: "../nathan-drive/index.html",
+                time: getCurrentTime()
+            });
+
+            setProgress("nathan_drive_sent");
+
+            saveState();
+            renderContactList();
+
+            showPushNotification(
+                "Marco Rinaldi",
+                "Recovered personal cloud archive"
+            );
+        }
+
+    }, 2000);
 }

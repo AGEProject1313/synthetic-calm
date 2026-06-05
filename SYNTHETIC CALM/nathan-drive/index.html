@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nathan Verra — Personal Cloud Recovery</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="grid-overlay"></div>
+
+    <main class="shell">
+        <header class="topbar">
+            <div>
+                <div class="eyebrow">AETHOS RECOVERY PACKAGE</div>
+                <h1>NATHAN VERRA</h1>
+                <p>Personal Cloud / Recent Files</p>
+            </div>
+            <div class="status-pill">PARTIAL SYNC</div>
+        </header>
+
+        <section class="recovery-card">
+            <div class="meta-grid">
+                <div>
+                    <span>LAST SYNC</span>
+                    <strong>15 DEC — 22:39</strong>
+                </div>
+                <div>
+                    <span>SOURCE</span>
+                    <strong>Legacy Infrastructure Node perimeter</strong>
+                </div>
+                <div>
+                    <span>RECOVERY STATUS</span>
+                    <strong>3 files restored</strong>
+                </div>
+            </div>
+        </section>
+
+        <section class="file-list">
+            <button class="file-row" data-file="audio">
+                <span class="file-icon">WAV</span>
+                <div>
+                    <strong>death_recording.wav</strong>
+                    <em>Recovered audio fragment / corrupted tail</em>
+                </div>
+            </button>
+
+            <button class="file-row" data-file="notes">
+                <span class="file-icon">TXT</span>
+                <div>
+                    <strong>notes.txt</strong>
+                    <em>Last edited 15 DEC — 18:47</em>
+                </div>
+            </button>
+
+            <a class="file-row" href="retro_challenge.html">
+                <span class="file-icon">HTML</span>
+                <div>
+                    <strong>retro_challenge.html</strong>
+                    <em>Local game file / unknown embedded data</em>
+                </div>
+            </a>
+        </section>
+    </main>
+
+    <div id="modal" class="modal hidden">
+        <div class="modal-card">
+            <button id="closeModal" class="close-button">×</button>
+            <div id="modalTitle" class="modal-title"></div>
+            <div id="modalContent" class="modal-content"></div>
+        </div>
+    </div>
+
+    <script src="../onionchat/caseProgress.js"></script>
+    <script src="drive.js"></script>
+</body>
+</html>

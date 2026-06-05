@@ -101,23 +101,33 @@ function approveConnection(){
 
 function sendMessage(){
   const p = currentProfile();
+
   if (
     p.target &&
     typeof setProgress === "function"
-) {
+  ) {
     setProgress("sofia_contact_attempted");
-}
+  }
+
   el('messageArea').classList.remove('hidden');
   el('typingIndicator').classList.add('hidden');
   el('replyBox').classList.add('hidden');
   el('replyBox').innerHTML = '';
 
-  if(p.target){
+  if (
+    p.target &&
+    typeof hasProgress === "function" &&
+    hasProgress("s1_legacy_infrastructure_node_inspection_received")
+  ) {
+
     el('askPassBtn').classList.remove('hidden');
+
   } else {
+
     el('askPassBtn').classList.add('hidden');
     el('replyBox').classList.remove('hidden');
     el('replyBox').textContent = 'Message request sent. No reply yet.';
+
   }
 }
 

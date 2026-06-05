@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Retro Challenge</title>
+    <link rel="stylesheet" href="snake.css">
+</head>
+<body>
+    <main class="phone-shell">
+        <section class="phone">
+            <div class="brand">OLD SYSTEM / LOCAL FILE</div>
+
+            <div class="objective">
+                COLLECT <strong id="target">10</strong> SIGNALS TO UNLOCK FILE
+            </div>
+
+            <div class="screen">
+                <div class="screen-top">
+                    <span>SCORE <strong id="score">0</strong>/10</span>
+                    <span>BEST <strong id="best">0</strong></span>
+                </div>
+                <canvas id="game" width="240" height="240"></canvas>
+                <div id="message" class="message">PRESS START</div>
+            </div>
+
+            <button id="startButton" class="start-button">START</button>
+
+            <div class="controls" aria-label="Movement controls">
+                <button class="key key-up" data-dir="up">▲</button>
+                <div class="key-row">
+                    <button class="key" data-dir="left">◀</button>
+                    <button class="key" data-dir="down">▼</button>
+                    <button class="key" data-dir="right">▶</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="unlockPanel" class="unlock-panel hidden">
+            <div class="unlock-title">THE BEACON / AUTHOR ACCESS</div>
+            <div class="credential-row"><span>USER</span><strong>g.verra</strong></div>
+            <div class="credential-row"><span>PASSWORD</span><strong>Signal-3210</strong></div>
+            <p>If you're seeing this, you still remember how to move against the current.</p>
+        </section>
+    </main>
+
+    <script src="../onionchat/caseProgress.js"></script>
+    <script src="snake.js"></script>
+</body>
+</html>
