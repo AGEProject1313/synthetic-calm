@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AETHOS DRIVE</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="login-body">
+    <div class="grid-overlay"></div>
+
+    <main class="login-shell">
+        <section class="login-core">
+            <div class="eyebrow">ENCRYPTED STORAGE CONTAINER</div>
+
+            <h1 class="login-title">AETHOS DRIVE</h1>
+
+            <div class="login-subtitle">Multi-factor authentication required</div>
+
+            <div class="login-auth-grid">
+
+    <div class="auth-column">
+        <button id="hintBtn" class="login-icon-btn">
+            <span class="question-icon">?</span>
+        </button>
+
+        <input id="segment1"
+               class="login-segment"
+               maxlength="24"
+               placeholder="************">
+    </div>
+
+    <div class="auth-column">
+<button id="audioBtn" class="login-icon-btn" aria-label="Audio authentication clue">
+    <svg class="audio-symbol" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+        <path d="M5 9v6"></path>
+        <path d="M9 6v12"></path>
+        <path d="M13 4v16"></path>
+        <path d="M17 7v10"></path>
+        <path d="M21 10v4"></path>
+    </svg>
+</button>
+
+        <input id="segment2"
+               class="login-segment"
+               maxlength="24"
+               placeholder="************">
+    </div>
+
+    <div class="auth-column">
+        <button id="captchaBtn" class="login-icon-btn">
+            <span class="captcha-icon">◇</span>
+        </button>
+
+        <input id="segment3"
+               class="login-segment"
+               maxlength="24"
+               placeholder="************">
+    </div>
+
+</div>
+
+            <button id="authenticateBtn" class="auth-submit">AUTHENTICATE</button>
+
+            <div id="loginStatus" class="login-status"></div>
+        </section>
+    </main>
+
+    <audio id="buzzerAudio" preload="auto">
+        <source src="audio/buzzer.mp3" type="audio/mpeg">
+    </audio>
+
+    <script src="../onionchat/caseProgress.js"></script>
+    <script src="drive.js"></script>
+</body>
+</html>
