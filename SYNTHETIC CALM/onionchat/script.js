@@ -2238,7 +2238,7 @@ function startMarcoAethosSequence() {
         },
         {
             delay: 53000,
-            text: "I also loaded the reference subjects identified so far: Nathan Verra, Ava Mercer, Markus Kessler and Elias Rowe.",
+            text: "I also loaded the reference subjects identified so far: Nathan Verra, Ava Mercer, Daniel Kessler and Elias Rowe.",
             progress: "aethos_subjects_loaded"
         }
     ]);
