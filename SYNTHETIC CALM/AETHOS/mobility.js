@@ -13,6 +13,7 @@ const POIS = [
     { id: "L3", district: "Lyra", name: "Residential Services Hub", access: "PUBLIC", x: -760, y: -230 },
     { id: "L4", district: "Lyra", name: "Lyra Market", access: "PUBLIC", x: -650, y: -610 },
     { id: "L12", district: "Lyra", name: "Residential Module B214", access: "BLUE", x: -860, y: -1180 },
+    { id: "L12-K", district: "Lyra", name: "Kessler Residence", access: "BLUE", x: -980, y: -1120 },
 
     // NOVA COMMONS
     { id: "N1", district: "Nova Commons", name: "Civic Center", access: "PUBLIC", x: -1600, y: 560 },
